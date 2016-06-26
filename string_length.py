@@ -14,7 +14,14 @@ def string_length(string):
         return False
     
     value = 0
+    new_string = []
     
+    if '[' in string and ']' in string:
+        for i in string:
+            if i != '[' and i != ']' and i != ',':
+                new_string.append(i)
+        string = new_string
+           
     for i in string:
         value = value + 1
     
