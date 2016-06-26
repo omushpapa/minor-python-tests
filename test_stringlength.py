@@ -20,6 +20,7 @@ class  Test_stringlengthTestCase(unittest.TestCase):
     
     def test_returns_length_of_list(self):
         self.assertEqual(string_length.string_length(["fe","hsa", 6]), 3)
+        self.assertEqual(string_length.string_length(["fe","hsa", 6, 6.9]), 4)
 
 if __name__ == '__main__':
     unittest.main()
