@@ -57,8 +57,9 @@ def multiply(num_list):
 def main():
     get_list = input("Enter list: ")
     
-    print sum(get_list)
-    print multiply(get_list)
+    operations = [sum, multiply]
+    
+    print map(lambda x: x(get_list), operations)
 
 if __name__ == "__main__":
     main()
