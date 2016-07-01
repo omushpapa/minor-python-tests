@@ -8,37 +8,15 @@
 
 def max_in_list(num_list):
     
-    if verify(num_list):
-        if type(num_list) == int:
-            return num_list
-        
-        if len(num_list) == 1:
-            return num_list[0]
-        
-        temp = None
-
-        for i in range(len(num_list) - 1):
-            if num_list[i + 1] > num_list[i]:
-                temp = num_list[i + 1]
-
-        return temp 
-    
-    else:
-        return False
+    return sorted(num_list)[-1]
 
 def verify(int_list):
     """Check if list is appropriate"""
-    
-    if type(int_list) == int:
-        return True
-    
+        
     int_list = list(int_list)
     
     if len(int_list) == 0:
         return False
-    
-    if len(int_list) == 1:
-        return True
     
     for i in int_list:
         if type(i) != int:
@@ -50,7 +28,19 @@ def main():
     
     get_list = input("Enter list of numbers: ")
     
-    print max_in_list(get_list)
+    if (
+        type(get_list) == int or 
+        type(get_list) == None or 
+        get_list == ""
+        ):  
+            
+        print get_list
+    elif verify(get_list):
+        
+        print max_in_list(get_list)
+    else:
+        
+        print False
     
 if __name__ == "__main__":
     main()
